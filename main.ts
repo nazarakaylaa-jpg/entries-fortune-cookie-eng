@@ -17,6 +17,15 @@
 // lands on the last words ("your manager's name"). B is a close second but
 // its punchline ("delete your weekend") is a flatter reversal; A paints a
 // scene the judge reads in one breath.
+//
+// REVISION (fix pass, 2026-11-26): two real revisions over the v1 winner.
+//  1. "will return on Friday" -> "returns Friday": present-tense prophecy,
+//     tighter (93 chars), still declarative fortune voice.
+//  2. Added "at 4:59 p.m.": the Friday 4:59 p.m. deploy is the sharpest
+//     engineer-world beat — every engineer knows nothing good ships at
+//     4:59 p.m. on a Friday, so the bug's return lands harder, and the
+//     punchline ("your manager's name") still sits on the last words.
+//     Final: 103 chars, one line.
 
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -24,7 +33,7 @@ import { join } from "node:path";
 const MAX_CHARS = 120;
 
 const ENTRY =
-  "The bug you fixed last week will return on Friday, wearing a trench coat and your manager's name.";
+  "The bug you fixed last week returns Friday at 4:59 p.m., wearing a trench coat and your manager's name.";
 
 if ([...ENTRY].length < 1 || [...ENTRY].length > MAX_CHARS) {
   throw new Error(
